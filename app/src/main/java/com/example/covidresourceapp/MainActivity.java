@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "SignInActivity";
     private static final int RC_SIGN_IN = 9001;
 
-
     // Set the dimensions of the sign-in button.
 
     @Override
@@ -49,13 +48,14 @@ public class MainActivity extends AppCompatActivity {
 
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-        SignInButton signInButton = findViewById(R.id.sign_in_button);
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
         // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
+        SignInButton signInButton = findViewById(R.id.sign_in_button);
         signInButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
@@ -100,14 +100,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        updateUI(account);
+//        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+//        updateUI(account);
+    }
+
+    private void signOut() {
+        mGoogleSignInClient.signOut();
     }
 
     void updateUI(GoogleSignInAccount account){
         if(account != null){
-            //Do your Stuff
+            //Display user name
             Toast.makeText(this, account.getDisplayName(),Toast.LENGTH_LONG).show();
+
+            //Take to features page
+            Intent intent = new Intent(this, HomeScreenActivity.class);
+            startActivity(intent);
         }
     }
 }
