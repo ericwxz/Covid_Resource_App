@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidResourceApp">
-        <activity android:name=".ContactTracingActivity"></activity>
+        <activity android:name=".ShowEmptyRoom"></activity>
+        <activity android:name=".ContactTracingActivity" />
         <activity android:name=".VisualPlannerActivity" />
         <activity android:name=".DistanceDetectionActivity" />
         <activity android:name=".HomeScreenActivity" />
