@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidResourceApp">
+        <activity android:name=".ShowEmptyRoom"></activity>
         <activity android:name=".SelfReportActivity"></activity>
         <activity android:name=".ContactTracingActivity" />
         <activity android:name=".VisualPlannerActivity" />
