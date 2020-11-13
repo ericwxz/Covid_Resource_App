@@ -34,11 +34,20 @@ public class MainActivity extends AppCompatActivity {
 
     Button signOutButton;
     TextView statusTextView;
-    GoogleSignInClient mGoogleSignInClient;
     private static final String TAG = "SignInActivity";
     private static final int RC_SIGN_IN = 9001;
 
+    public static GoogleSignInClient mGoogleSignInClient;
+    public static GoogleSignInAccount account;
+
     // Set the dimensions of the sign-in button.
+    public static GoogleSignInClient getClient(){
+        return mGoogleSignInClient;
+    }
+
+    public static GoogleSignInAccount getAccount(){
+        return account;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
-            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+            account = completedTask.getResult(ApiException.class);
 
             // Signed in successfully, show authenticated UI.
             updateUI(account);
