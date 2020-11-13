@@ -14,8 +14,16 @@ import java.util.ArrayList;
 
 public class VisualPlannerActivity extends AppCompatActivity {
 
-    float length;
-    float width;
+    public static int length;
+    public static int width;
+
+    public static int getLength(){
+        return length;
+    }
+
+    public static int getWidth(){
+        return width;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +38,13 @@ public class VisualPlannerActivity extends AppCompatActivity {
 
                 //get length as a float
                 EditText length_raw = findViewById(R.id.lengthfield);
-                length = Float.valueOf(length_raw.getText().toString());
+                length = Integer.valueOf(length_raw.getText().toString());
 
                 //get width as a float
                 EditText width_raw = findViewById(R.id.widthfield);
-                length = Float.valueOf(width_raw.getText().toString());
+                width = Integer.valueOf(width_raw.getText().toString());
 
-                genRoom(length, width);
+                genRoom();
             }
         });
 
@@ -54,7 +62,7 @@ public class VisualPlannerActivity extends AppCompatActivity {
 
     }
 
-    void genRoom(float length, float width){
+    void genRoom(){
         Intent intent = new Intent(this, ShowEmptyRoom.class);
         startActivity(intent);
     }
