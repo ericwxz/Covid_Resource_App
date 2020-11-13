@@ -9,6 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.covidresourceapp"
+        multiDexEnabled true
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 1
@@ -44,6 +45,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-storage-ktx'
+    implementation 'com.google.firebase:firebase-database'
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
 
     testImplementation 'junit:junit:4.13.1'
