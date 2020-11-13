@@ -32,15 +32,12 @@ import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button signOutButton;
-    TextView statusTextView;
     private static final String TAG = "SignInActivity";
     private static final int RC_SIGN_IN = 9001;
 
     public static GoogleSignInClient mGoogleSignInClient;
     public static GoogleSignInAccount account;
 
-    // Set the dimensions of the sign-in button.
     public static GoogleSignInClient getClient(){
         return mGoogleSignInClient;
     }
@@ -109,12 +106,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-//        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-//        updateUI(account);
-    }
-
-    private void signOut() {
-        mGoogleSignInClient.signOut();
     }
 
     void updateUI(GoogleSignInAccount account){
