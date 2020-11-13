@@ -28,7 +28,6 @@ import java.util.Map;
 import java.util.Set;
 
 public class SelfReportActivity extends AppCompatActivity {
-
     private static final String TAG = SelfReportActivity.class.getSimpleName();
     GoogleSignInAccount account = MainActivity.getAccount();
     GoogleSignInClient client = MainActivity.getClient();
