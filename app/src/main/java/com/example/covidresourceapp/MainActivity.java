@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
     public static GoogleSignInClient mGoogleSignInClient;
     public static GoogleSignInAccount account;
 
-
     public static GoogleSignInClient getClient(){
         return mGoogleSignInClient;
     }
